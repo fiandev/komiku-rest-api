@@ -20,6 +20,7 @@
     "express-device": "^0.4.2",
     "fs": "^0.0.1-security",
     "image-downloader": "^4.0.3",
+    "nodemon": "^2.0.4",
     "module-alias": "^2.2.2"
   },
   "_moduleAliases": {
