@@ -1,0 +1,33 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": ["airbnb-base"],
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "script"
+    },
+    "rules": {
+        "semi": "off",
+        "linebreak-style": "off",
+        "indent": ["error", 4],
+        "no-console": "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "alias": {
+                "map": [
+                    ["cores", "./core"],
+                    ["configs", "./config"],
+                    ["controllers", "./app/controllers"],
+                    ["middleware", "./app/middleware"],
+                    ["routes", "./app/routes"],
+                    ["helpers", "./app/helpers"],
+                    ["constants", "./app/constants"]
+                ],
+                "extensions": [".ts", ".js", ".jsx", ".json"]
+            }
+        }
+    }
+}

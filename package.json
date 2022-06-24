@@ -1,0 +1,34 @@
+{
+  "name": "komiku-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "fiandev",
+  "repository": {
+    "github": ""
+  },
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.5",
+    "express": "^4.17.1",
+    "express-device": "^0.4.2",
+    "fs": "^0.0.1-security",
+    "image-downloader": "^4.0.3",
+    "module-alias": "^2.2.2"
+  },
+  "_moduleAliases": {
+    "cores": "core/",
+    "configs": "config/",
+    "controllers": "app/controllers/",
+    "middleware": "app/middleware/",
+    "helpers": "app/helpers/",
+    "constants": "app/constants/",
+    "routes": "app/routes"
+  }
+}
