@@ -52,8 +52,7 @@ class Controller {
     getBaseUrl() {
       const { request } = this
       
-      const baseUrlResult = cleanUrl(request.protocol + '://' + request.get('host'))
-      console.log(baseUrlResult);
+      const baseUrlResult = "https://komiku-rest-api.herokuapp.com"
       return baseUrlResult
     }
 
