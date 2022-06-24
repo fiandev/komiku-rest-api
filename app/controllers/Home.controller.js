@@ -22,7 +22,7 @@ class HomeController extends Controller {
 
                 const obj = {}
                 obj.title = title
-                obj.thumb = `${this.getBaseUrl()}/thumbnail/?url=${cleanUrl(thumb)}`
+                obj.thumb = `${this.getBaseUrl()}/thumbnail/?url=${thumb}`
                 obj.type = type
                 obj.reader = reader
                 obj.release = release
@@ -56,7 +56,7 @@ class HomeController extends Controller {
 
                 const obj = {}
                 obj.title = title
-                obj.thumb = `${this.getBaseUrl()}/thumbnail/?url=${cleanUrl(thumb)}`
+                obj.thumb = `${this.getBaseUrl()}/thumbnail/?url=${thumb}`
                 obj.type = type
                 obj.release = release
                 obj.detail_endpoint = mangaTrim(detailEndpoint)
@@ -106,7 +106,7 @@ class HomeController extends Controller {
 
                 const obj = {}
                 obj.title = title
-                obj.thumb = `${this.getBaseUrl()}/thumbnail/?url=${cleanUrl(thumb)}`
+                obj.thumb = `${this.getBaseUrl()}/thumbnail/?url=${thumb}`
                 obj.type = type
                 obj.description = description
                 obj.detail_endpoint = mangaTrim(detailEndpoint)
