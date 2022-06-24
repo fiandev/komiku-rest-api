@@ -51,7 +51,10 @@ class Controller {
     
     getBaseUrl() {
       const { request } = this
-      return cleanUrl(request.protocol + '://' + request.get('host'))
+      
+      const baseUrlResult = cleanUrl(request.protocol + '://' + request.get('host'))
+      console.log(baseUrlResult);
+      return baseUrlResult
     }
 
 }
