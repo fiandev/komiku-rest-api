@@ -28,8 +28,8 @@ class HomeController extends Controller {
                 obj.release = release
                 obj.detail_endpoint = mangaTrim(detailEndpoint)
                 obj.chapter_endpoint = chapterTrim(chapterEndpoint)
-                dataResult.push(obj)
                 
+                dataResult.push(obj)
             })
             return this.success(dataResult)
 
