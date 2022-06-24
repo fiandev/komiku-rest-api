@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "fiandev",
   "repository": {
-    "github": ""
+    "github": "https://github.com/fiandev/komiku-rest-api"
   },
   "license": "ISC",
   "dependencies": {
