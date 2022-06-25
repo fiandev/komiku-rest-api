@@ -11,7 +11,7 @@ class HomeController extends Controller {
             const root = selector('#Trending > .perapih > .ls123 > .ls23')
 
             const dataResult = []
-            root.each((index, elm) => {
+            await root.each((index, elm) => {
                 const title = selector(elm).find('h4').text().trim()
                 const thumb = selector(elm).find('.ls23v > a > img').attr('src')
                 const type = selector(elm).find('.ls23v > a > div').attr('class');

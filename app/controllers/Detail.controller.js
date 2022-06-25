@@ -74,7 +74,7 @@ class DetailController extends Controller {
             obj.summary = summary
             obj.synopsis = synopsis
             obj.chapters = chapters
-
+            if (obj.title == "" || obj.title == null) return this.error(null, "not found!")
             return this.success(obj)
         } catch (err) {
             return this.error(null, err.message)
@@ -118,7 +118,7 @@ class DetailController extends Controller {
             obj.prev_chapter_endpoint = chapterTrim(prevChapterEndpoint)
             obj.next_chapter_endpoint = chapterTrim(nextChapterEndpoint)
             obj.images = images
-
+            if (obj.title == "" || obj.title == null) return this.error(null, "chapter not found!")
             return this.success(obj)
         } catch (err) {
             return this.error(null, err.message)
