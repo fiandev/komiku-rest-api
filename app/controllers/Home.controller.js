@@ -31,7 +31,7 @@ class HomeController extends Controller {
                 
                 dataResult.push(obj)
             })
-            if (dataResult.length < 1) return this.error(null, "something error!")
+            if (dataResult.length < 1) return this.unknownError()
             return this.success(dataResult)
 
         } catch (err) {
@@ -64,7 +64,7 @@ class HomeController extends Controller {
                 obj.chapter_endpoint = chapterTrim(chapterEndpoint)
                 dataResult.push(obj)
             })
-            if (dataResult.length < 1) return this.error(null, "something error!")
+            if (dataResult.length < 1) return this.unknownError()
             return this.success(dataResult)
         } catch (err) {
             return this.error(null, err.message)

@@ -55,7 +55,13 @@ class Controller {
       const baseUrlResult = cleanUrl(request.protocol + '://' + request.get('host'))
       return baseUrlResult
     }
-
+    
+    unknownError(message = 'failed', statusCode = 500){
+      const { response } = this
+      obj.success = false
+      obj.message = message
+      response.status(statusCode).json(obj)
+    }
 }
 
 module.exports = Controller
