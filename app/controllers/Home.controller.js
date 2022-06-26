@@ -45,7 +45,7 @@ class HomeController extends Controller {
             const root = selector('#Terbaru > .ls4w > .ls4')
 
             const dataResult = []
-            root.each((index, elm) => {
+            await root.each((index, elm) => {
                 const title = selector(elm).find('.ls4j > h4 > a').text()
                 const thumb = selector(elm).find('.ls4v > a > img').attr('src')
                 const typeRelease = selector(elm).find('.ls4j > .ls4s').text().split('•')
