@@ -10,6 +10,7 @@ class HomeController extends Controller {
             const selector = cheerio.load(data)
             const root = selector('#Trending > .perapih > .ls123 > .ls23')
 
+            const obj = {}
             const dataResult = []
             await root.each((index, elm) => {
                 const title = selector(elm).find('h4').text().trim()
@@ -20,7 +21,6 @@ class HomeController extends Controller {
                 const detailEndpoint = selector(elm).find('.ls23v > a').attr('href')
                 const chapterEndpoint = selector(elm).find('.ls23j > a').attr('href')
 
-                const obj = {}
                 obj.title = title
                 obj.thumb = `${this.getBaseUrl()}/thumbnail/?url=${thumb}`
                 obj.type = type
@@ -45,6 +45,7 @@ class HomeController extends Controller {
             const selector = cheerio.load(data)
             const root = selector('#Terbaru > .ls4w > .ls4')
 
+            const obj = {}  
             const dataResult = []
             await root.each((index, elm) => {
                 const title = selector(elm).find('.ls4j > h4 > a').text()
@@ -55,7 +56,6 @@ class HomeController extends Controller {
                 const detailEndpoint = selector(elm).find('.ls4v > a').attr('href')
                 const chapterEndpoint = selector(elm).find('.ls4j > a').attr('href')
 
-                const obj = {}
                 obj.title = title
                 obj.thumb = `${this.getBaseUrl()}/thumbnail/?url=${thumb}`
                 obj.type = type
