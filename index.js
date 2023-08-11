@@ -1,6 +1,6 @@
 require('module-alias/register')
 const device = require('express-device');
-const { Route } = require('cores/Route')
+const { Route } = require('@cores/Route')
 const { app } = require('./app')
 const { repo } = require('./config')
 class App extends Route {
