@@ -1,8 +1,8 @@
 const axios = require('axios')
 const cheerio = require('cheerio')
-const Controller = require('cores/Controller')
-const { detailUrl, chapterUrl } = require('constants/url')
-const { chapterTrim, cleanUrl } = require('helpers/formatter')
+const Controller = require('../../core/Controller')
+const { detailUrl, chapterUrl } = require('../constants/url')
+const { chapterTrim, cleanUrl } = require('../helpers/formatter')
 
 class DetailController extends Controller {
     async detail() {
@@ -15,7 +15,7 @@ class DetailController extends Controller {
 
             const obj = {}
             const title = root.find('#Judul > h1').text().trim()
-            const thumb = root.find('#Informasi > .ims > img').attr('src')
+            const thumb = root.find('#Informasi > .ims > img').attr('@')
 
             // info
             const objInfo = {}
@@ -109,7 +109,7 @@ class DetailController extends Controller {
             root.find('#Baca_Komik > img').each((index, elm) => {
                 const objImage = {}
                 objImage.alt = selector(elm).attr('alt')
-                objImage.image = `${this.getBaseUrl()}/thumbnail/?url=${cleanUrl(selector(elm).attr('src'))}`
+                objImage.image = `${this.getBaseUrl()}/thumbnail/?url=${cleanUrl(selector(elm).attr('@'))}`
                 images.push(objImage)
             })
 

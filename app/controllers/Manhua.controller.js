@@ -1,8 +1,8 @@
 const axios = require('axios')
 const cheerio = require('cheerio')
-const Controller = require('cores/Controller')
-const { manhuaHomeUrl, baseUrl2 } = require('constants/url')
-const { mangaTrim, chapterTrim, cleanUrl } = require('helpers/formatter')
+const Controller = require('../../core/Controller')
+const { manhuaHomeUrl, baseUrl2 } = require('../constants/url')
+const { mangaTrim, chapterTrim, cleanUrl } = require('../helpers/formatter')
 
 class ManhuaController extends Controller {
     async all() {
@@ -23,7 +23,7 @@ class ManhuaController extends Controller {
 
             root.each((index, elm) => {
                 const title = selector(elm).find('.kan > a > h3').text().trim()
-                const thumb = selector(elm).find('.bgei > a > img').attr('data-src')
+                const thumb = selector(elm).find('.bgei > a > img').attr('data-@')
                 const type = selector(elm).find('.bgei > a > div > b').text()
                 const readerRelease = selector(elm).find('.kan > .judul2').text().split('•')
                 const reader = readerRelease[0].trim().split(' ')[0].trim()
@@ -75,7 +75,7 @@ class ManhuaController extends Controller {
             const dataResult = []
             root.each((index, elm) => {
                 const title = selector(elm).find('h4').text().trim()
-                const thumb = selector(elm).find('.ls23v > a > img').attr('data-src')
+                const thumb = selector(elm).find('.ls23v > a > img').attr('data-@')
                 const reader = selector(elm).find('.ls23t').first().text()
                 const release = selector(elm).find('.ls23t').last().text()
                 const detailEndpoint = selector(elm).find('.ls23v > a').attr('href')
@@ -105,7 +105,7 @@ class ManhuaController extends Controller {
             const dataResult = []
             root.each((index, elm) => {
                 const title = selector(elm).find('.ls4j > h4 > a').text()
-                const thumb = selector(elm).find('.ls4v > a > img').attr('data-src')
+                const thumb = selector(elm).find('.ls4v > a > img').attr('data-@')
                 const typeRelease = selector(elm).find('.ls4j > .ls4s').text().split('•')
                 const type = typeRelease[0].trim().split(' ')[0]
                 const release = typeRelease[1].trim()

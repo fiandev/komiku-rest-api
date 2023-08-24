@@ -1,5 +1,5 @@
 const download = require('image-downloader')
-const Controller = require('cores/Controller')
+const Controller = require('../../core/Controller')
 
 class ThumbnailController extends Controller {
   async show(){

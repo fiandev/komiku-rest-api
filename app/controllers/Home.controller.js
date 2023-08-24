@@ -1,8 +1,8 @@
 const axios = require('axios')
 const cheerio = require('cheerio')
-const Controller = require('cores/Controller')
-const { baseUrl, baseUrl2 } = require('constants/url')
-const { chapterTrim, mangaTrim, cleanUrl } = require('helpers/formatter')
+const Controller = require('../../core/Controller')
+const { baseUrl, baseUrl2 } = require('../constants/url')
+const { chapterTrim, mangaTrim, cleanUrl } = require('../helpers/formatter')
 class HomeController extends Controller {
     async popular() {
         try {
@@ -14,7 +14,7 @@ class HomeController extends Controller {
             const dataResult = []
             await root.each((index, elm) => {
                 const title = selector(elm).find('h4').text().trim()
-                const thumb = selector(elm).find('.ls23v > a > img').attr('src')
+                const thumb = selector(elm).find('.ls23v > a > img').attr('@')
                 const type = selector(elm).find('.ls23v > a > div').attr('class');
                 const reader = selector(elm).find('.ls23t').first().text()
                 const release = selector(elm).find('.ls23t').last().text()
@@ -49,7 +49,7 @@ class HomeController extends Controller {
             const dataResult = []
             await root.each((index, elm) => {
                 const title = selector(elm).find('.ls4j > h4 > a').text()
-                const thumb = selector(elm).find('.ls4v > a > img').attr('src')
+                const thumb = selector(elm).find('.ls4v > a > img').attr('@')
                 const typeRelease = selector(elm).find('.ls4j > .ls4s').text().split('•')
                 const type = typeRelease[0].trim().split(' ')[0]
                 const release = typeRelease[1].trim()
@@ -86,7 +86,7 @@ class HomeController extends Controller {
 
             root.each((index, elm) => {
                 const title = selector(elm).find('.kan > a > h3').text().trim()
-                const thumb = selector(elm).find('.bgei > a > img').attr('src')
+                const thumb = selector(elm).find('.bgei > a > img').attr('@')
                 const type = selector(elm).find('.bgei > a > div > b').text()
                 const description = selector(elm).find('.kan > p').text().trim()
                 const detailEndpoint = selector(elm).find('.bgei > a').attr('href')

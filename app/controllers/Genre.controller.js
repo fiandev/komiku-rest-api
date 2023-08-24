@@ -1,9 +1,9 @@
 const axios = require('axios')
 const cheerio = require('cheerio')
-const Controller = require('cores/Controller')
-const { baseUrl2 } = require('constants/url')
+const Controller = require('../../core/Controller')
+const { baseUrl2 } = require('../constants/url')
 const { genres } = require('constants/genres')
-const { chapterTrim, mangaTrim, cleanUrl } = require('helpers/formatter')
+const { chapterTrim, mangaTrim, cleanUrl } = require('../helpers/formatter')
 
 class GenreController extends Controller {
     async genreDetail() {
@@ -25,7 +25,7 @@ class GenreController extends Controller {
 
             root.each((index, elm) => {
                 const title = selector(elm).find('.kan > a > h3').text().trim()
-                const thumb = selector(elm).find('.bgei > a > img').attr('data-src')
+                const thumb = selector(elm).find('.bgei > a > img').attr('data-@')
                 const type = selector(elm).find('.bgei > a > div > b').text()
                 const readerRelease = selector(elm).find('.kan > .judul2').text().split('•')
                 const reader = readerRelease[0].trim().split(' ')[0].trim()

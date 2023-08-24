@@ -1,4 +1,4 @@
-const { cleanUrl } = require('helpers/formatter');
+const { cleanUrl } = require('../app/helpers/formatter');
 
 class Controller {
     constructor(req, res, next) {

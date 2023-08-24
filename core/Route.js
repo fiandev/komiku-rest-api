@@ -1,12 +1,12 @@
 const Express = require('express')
-const GenreController = require('controllers/Genre.controller')
+const GenreController = require('../app/controllers/Genre.controller')
 const HomeController = require('controllers/Home.controller')
 const DetailController = require('controllers/Detail.controller')
 const MangaController = require('controllers/Manga.controller')
 const ManhuaController = require('controllers/Manhua.controller')
 const ManhwaController = require('controllers/Manhwa.controller')
 const ThumbnailController = require('controllers/thumbnail.controller')
-const { log } = require('middleware/logging')
+const { log } = require('../app/middleware/logging')
 
 const router = Express.Router()
 class Route {
