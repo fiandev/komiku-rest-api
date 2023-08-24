@@ -2,12 +2,7 @@ const _fs = require("fs");
 const _path = require("path");
 
 const aliases = {
-  "cores": "../../core",
-  "constants": "../app/constants",
-  "helpers": "../app/helpers",
-  "controllers": "../app/controllers",
-  "middleware": "../app/middleware",
-  "routes": "../app/routes"
+  "constants": "../constants",
 };
 
 function scandiir (folder) {
@@ -50,7 +45,7 @@ function checkfile (file) {
  _fs.writeFileSync(file, content); 
 }
 
-let files = scandiir("./core");
+let files = scandiir("./app");
 
 for (let file of files) {
   if (/\.(js|ts(x)?)/.test(file)) checkfile(file);

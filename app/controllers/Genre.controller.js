@@ -2,7 +2,7 @@ const axios = require('axios')
 const cheerio = require('cheerio')
 const Controller = require('../../core/Controller')
 const { baseUrl2 } = require('../constants/url')
-const { genres } = require('constants/genres')
+const { genres } = require('../constants/genres')
 const { chapterTrim, mangaTrim, cleanUrl } = require('../helpers/formatter')
 
 class GenreController extends Controller {
